@@ -1,0 +1,149 @@
+[gd_scene load_steps=19 format=3 uid="uid://oigeyyiijyku"]
+
+[ext_resource type="Texture2D" uid="uid://el7827j4mgw1" path="res://Assets/Browser Games - Fireboy and Watergirl_ The Forest Temple - Playable Characters - Fireboy & Watergirl (HTML 5).png" id="1_pe3pn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jrfj"]
+atlas = ExtResource("1_pe3pn")
+region = Rect2(882, 224, 147, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6dkh"]
+atlas = ExtResource("1_pe3pn")
+region = Rect2(1044, 390, 174, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mccv"]
+atlas = ExtResource("1_pe3pn")
+region = Rect2(1190, 390, 170, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n2gv"]
+atlas = ExtResource("1_pe3pn")
+region = Rect2(772, 390, 193, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbn8u"]
+atlas = ExtResource("1_pe3pn")
+region = Rect2(910, 390, 182, 130)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pfjjx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jrfj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6dkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mccv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n2gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbn8u")
+}],
+"loop": true,
+"name": &"move_right",
+"speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3b48"]
+atlas = ExtResource("1_pe3pn")
+region = Rect2(1624, 494, 93, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h8lq"]
+atlas = ExtResource("1_pe3pn")
+region = Rect2(1356, 494, 93, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlsh2"]
+atlas = ExtResource("1_pe3pn")
+region = Rect2(1491, 494, 93, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5362f"]
+atlas = ExtResource("1_pe3pn")
+region = Rect2(422, 0, 91, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oy7fx"]
+atlas = ExtResource("1_pe3pn")
+region = Rect2(681, 0, 107, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eokym"]
+atlas = ExtResource("1_pe3pn")
+region = Rect2(0, 0, 128, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8wjm"]
+atlas = ExtResource("1_pe3pn")
+region = Rect2(0, 216, 170, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqwpc"]
+atlas = ExtResource("1_pe3pn")
+region = Rect2(175, 216, 175, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0b5o"]
+atlas = ExtResource("1_pe3pn")
+region = Rect2(350, 216, 175, 108)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8hf5k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3b48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7h8lq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlsh2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5362f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oy7fx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eokym")
+}],
+"loop": true,
+"name": &"move_down",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8wjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqwpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0b5o")
+}],
+"loop": true,
+"name": &"move_right",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4uthd"]
+size = Vector2(43, 75)
+
+[node name="Watergirl" type="CharacterBody2D"]
+
+[node name="Body" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pfjjx")
+frame_progress = 0.62616
+
+[node name="Head" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8hf5k")
+frame_progress = 0.0799862
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 15.5)
+shape = SubResource("RectangleShape2D_4uthd")

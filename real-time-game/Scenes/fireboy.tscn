@@ -1,0 +1,164 @@
+[gd_scene load_steps=21 format=3 uid="uid://b47m8kofkusoo"]
+
+[ext_resource type="Texture2D" uid="uid://el7827j4mgw1" path="res://Assets/Browser Games - Fireboy and Watergirl_ The Forest Temple - Playable Characters - Fireboy & Watergirl (HTML 5).png" id="1_6r3ir"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26vp8"]
+atlas = ExtResource("1_6r3ir")
+region = Rect2(133, 340, 133, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdfg1"]
+atlas = ExtResource("1_6r3ir")
+region = Rect2(1420, 294, 142, 147)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjxnq"]
+atlas = ExtResource("1_6r3ir")
+region = Rect2(1551, 294, 141, 147)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jadow"]
+atlas = ExtResource("1_6r3ir")
+region = Rect2(1820, 294, 140, 147)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weire"]
+atlas = ExtResource("1_6r3ir")
+region = Rect2(1691, 294, 140, 147)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hjxnq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26vp8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdfg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjxnq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jadow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weire")
+}],
+"loop": true,
+"name": &"move_right",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_coiu6"]
+atlas = ExtResource("1_6r3ir")
+region = Rect2(0, 850, 134, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yxsh"]
+atlas = ExtResource("1_6r3ir")
+region = Rect2(134, 850, 134, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wt3sh"]
+atlas = ExtResource("1_6r3ir")
+region = Rect2(268, 850, 134, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_raewn"]
+atlas = ExtResource("1_6r3ir")
+region = Rect2(402, 850, 134, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t63ll"]
+atlas = ExtResource("1_6r3ir")
+region = Rect2(536, 850, 134, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6riu"]
+atlas = ExtResource("1_6r3ir")
+region = Rect2(670, 850, 134, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qa31"]
+atlas = ExtResource("1_6r3ir")
+region = Rect2(1332, 790, 148, 158)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_670nx"]
+atlas = ExtResource("1_6r3ir")
+region = Rect2(1470, 790, 147, 158)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdudb"]
+atlas = ExtResource("1_6r3ir")
+region = Rect2(1184, 1036, 148, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5toas"]
+atlas = ExtResource("1_6r3ir")
+region = Rect2(1022, 1036, 146, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbnj1"]
+atlas = ExtResource("1_6r3ir")
+region = Rect2(864, 1036, 144, 148)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fy45u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_coiu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yxsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wt3sh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_raewn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t63ll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6riu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qa31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_670nx")
+}],
+"loop": true,
+"name": &"move_down",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdudb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5toas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbnj1")
+}],
+"loop": true,
+"name": &"move_right",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jadow"]
+size = Vector2(48, 80)
+
+[node name="Fireboy" type="CharacterBody2D"]
+
+[node name="Body" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hjxnq")
+frame_progress = 0.799838
+
+[node name="Head" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fy45u")
+animation = &"move_right"
+frame_progress = 0.141443
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 15)
+shape = SubResource("RectangleShape2D_jadow")
