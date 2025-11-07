@@ -1,3 +1,21 @@
-[gd_scene format=3 uid="uid://sh1um1y4bdov"]
+[gd_scene load_steps=4 format=3 uid="uid://sh1um1y4bdov"]
+
+[ext_resource type="PackedScene" uid="uid://oigeyyiijyku" path="res://Scenes/watergirl.tscn" id="1_fhsqj"]
+[ext_resource type="PackedScene" uid="uid://b47m8kofkusoo" path="res://Scenes/fireboy.tscn" id="2_38dla"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhsqj"]
+size = Vector2(329, 20)
 
 [node name="Level-Base" type="Node2D"]
+
+[node name="Watergirl" parent="." instance=ExtResource("1_fhsqj")]
+position = Vector2(103, 93)
+
+[node name="Fireboy" parent="." instance=ExtResource("2_38dla")]
+position = Vector2(213, 92)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(193.5, 200)
+shape = SubResource("RectangleShape2D_fhsqj")

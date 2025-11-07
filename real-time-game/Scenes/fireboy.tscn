@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://b47m8kofkusoo"]
+[gd_scene load_steps=22 format=3 uid="uid://b47m8kofkusoo"]
 
 [ext_resource type="Texture2D" uid="uid://el7827j4mgw1" path="res://Assets/Browser Games - Fireboy and Watergirl_ The Forest Temple - Playable Characters - Fireboy & Watergirl (HTML 5).png" id="1_6r3ir"]
+[ext_resource type="Script" uid="uid://bfys0xhu24vpl" path="res://Scripts/Fireboy.cs" id="1_ufnnf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_26vp8"]
 atlas = ExtResource("1_6r3ir")
@@ -149,15 +150,13 @@ animations = [{
 size = Vector2(48, 80)
 
 [node name="Fireboy" type="CharacterBody2D"]
+script = ExtResource("1_ufnnf")
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hjxnq")
-frame_progress = 0.799838
 
 [node name="Head" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fy45u")
-animation = &"move_right"
-frame_progress = 0.141443
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 15)
