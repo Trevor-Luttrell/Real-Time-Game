@@ -81,4 +81,9 @@ public partial class Watergirl : CharacterBody2D
 		if (body.Animation != animName)
 			body.Play(animName);
 	}
+	
+	public void ResetVelocity()
+	{
+		Velocity = Vector2.Zero;
+	}
 }
