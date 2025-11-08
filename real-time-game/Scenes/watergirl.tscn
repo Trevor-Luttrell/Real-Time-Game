@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://oigeyyiijyku"]
+[gd_scene load_steps=21 format=3 uid="uid://oigeyyiijyku"]
 
 [ext_resource type="Script" uid="uid://csjktjlxed22f" path="res://Scripts/Watergirl.cs" id="1_5jrfj"]
 [ext_resource type="Texture2D" uid="uid://el7827j4mgw1" path="res://Assets/Browser Games - Fireboy and Watergirl_ The Forest Temple - Playable Characters - Fireboy & Watergirl (HTML 5).png" id="1_pe3pn"]
@@ -133,7 +133,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4uthd"]
-size = Vector2(43, 75)
+size = Vector2(20, 76)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5jrfj"]
+radius = 24.0
 
 [node name="Watergirl" type="CharacterBody2D"]
 script = ExtResource("1_5jrfj")
@@ -147,5 +150,9 @@ sprite_frames = SubResource("SpriteFrames_8hf5k")
 frame_progress = 0.0799862
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 15.5)
+position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_4uthd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(2, 3)
+shape = SubResource("CircleShape2D_5jrfj")

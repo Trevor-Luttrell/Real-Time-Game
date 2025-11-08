@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci5snm0nmhbcq"]
+
+[ext_resource type="Texture2D" uid="uid://bmkvivd8olmpv" path="res://Assets/Decorations (32x32).png" id="1_vvyo4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anqd2"]
+size = Vector2(95, 11)
+
+[sub_resource type="Curve2D" id="Curve2D_myvba"]
+
+[node name="MovingPlatform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(48, 8)
+texture = ExtResource("1_vvyo4")
+region_enabled = true
+region_rect = Rect2(64, 64, 96, 15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(48, 6)
+shape = SubResource("RectangleShape2D_anqd2")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_myvba")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
