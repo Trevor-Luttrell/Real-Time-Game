@@ -15,10 +15,11 @@ script = ExtResource("1_anqd2")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 rotation = -2.88523
-scale = Vector2(1, 1)
 progress = 202.719
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(48, 8)

@@ -27,12 +27,13 @@ public partial class LevelBase : Node2D
 		}
 	}
 	
+	public void OnHazardDeathTriggered()
+	{
+		CallDeferred(nameof(RestartLevel));
+	}
+	
 	private void RestartLevel()
 	{
-		watergirl.GlobalPosition = WatergirlStartPos;
-		fireboy.GlobalPosition = FireboyStartPos;
-		
-		watergirl.ResetVelocity();
-		fireboy.ResetVelocity();
+		GetTree().ReloadCurrentScene();
 	}
 }
