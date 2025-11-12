@@ -1,9 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://sh1um1y4bdov"]
+[gd_scene load_steps=8 format=3 uid="uid://sh1um1y4bdov"]
 
 [ext_resource type="Script" uid="uid://dwf152mcg4bnq" path="res://Scripts/LevelBase.cs" id="1_38dla"]
 [ext_resource type="PackedScene" uid="uid://oigeyyiijyku" path="res://Scenes/watergirl.tscn" id="1_fhsqj"]
 [ext_resource type="PackedScene" uid="uid://b47m8kofkusoo" path="res://Scenes/fireboy.tscn" id="2_38dla"]
-[ext_resource type="PackedScene" uid="uid://ci5snm0nmhbcq" path="res://Scenes/moving_platform.tscn" id="4_n5e7m"]
+[ext_resource type="Texture2D" uid="uid://bmkvivd8olmpv" path="res://Assets/Decorations (32x32).png" id="4_3ne40"]
+[ext_resource type="Script" uid="uid://duv8uvtm0c2f1" path="res://Scripts/MovingPlatform.cs" id="4_e3kpl"]
+
+[sub_resource type="Curve2D" id="Curve2D_2ssho"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0.800003, 0, 0, 0, 0, 96, 0, 0, 0, 0, 0, 0.4, 0.800003)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anqd2"]
+size = Vector2(95, 11)
 
 [node name="Level Base" type="Node2D"]
 script = ExtResource("1_38dla")
@@ -14,6 +24,25 @@ position = Vector2(103, 93)
 [node name="Fireboy" parent="." instance=ExtResource("2_38dla")]
 position = Vector2(213, 92)
 
-[node name="MovingPlatform" parent="." instance=ExtResource("4_n5e7m")]
-position = Vector2(12, 180)
+[node name="MovingPlatform" type="Path2D" parent="."]
+position = Vector2(57, 215)
 scale = Vector2(2.5, 2.5)
+curve = SubResource("Curve2D_2ssho")
+script = ExtResource("4_e3kpl")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatform"]
+position = Vector2(0.4, 0.800003)
+rotation = 3.13322
+progress = 202.719
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="MovingPlatform"]
+
+[node name="Sprite2D" type="Sprite2D" parent="MovingPlatform/CharacterBody2D"]
+position = Vector2(48, 8)
+texture = ExtResource("4_3ne40")
+region_enabled = true
+region_rect = Rect2(64, 64, 96, 15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatform/CharacterBody2D"]
+position = Vector2(48, 6)
+shape = SubResource("RectangleShape2D_anqd2")

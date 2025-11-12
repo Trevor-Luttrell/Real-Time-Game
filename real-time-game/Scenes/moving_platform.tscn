@@ -1,25 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://ci5snm0nmhbcq"]
+[gd_scene load_steps=5 format=3 uid="uid://ci5snm0nmhbcq"]
 
+[ext_resource type="Script" uid="uid://duv8uvtm0c2f1" path="res://Scripts/MovingPlatform.cs" id="1_anqd2"]
 [ext_resource type="Texture2D" uid="uid://bmkvivd8olmpv" path="res://Assets/Decorations (32x32).png" id="1_vvyo4"]
+
+[sub_resource type="Curve2D" id="Curve2D_anqd2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_anqd2"]
 size = Vector2(95, 11)
 
-[sub_resource type="Curve2D" id="Curve2D_myvba"]
+[node name="MovingPlatform" type="Path2D"]
+scale = Vector2(2, 2)
+curve = SubResource("Curve2D_anqd2")
+script = ExtResource("1_anqd2")
 
-[node name="MovingPlatform" type="AnimatableBody2D"]
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotation = -2.88523
+scale = Vector2(1, 1)
+progress = 202.719
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(48, 8)
 texture = ExtResource("1_vvyo4")
 region_enabled = true
 region_rect = Rect2(64, 64, 96, 15)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(48, 6)
 shape = SubResource("RectangleShape2D_anqd2")
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_myvba")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
