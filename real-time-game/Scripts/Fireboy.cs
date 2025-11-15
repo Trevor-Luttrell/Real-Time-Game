@@ -23,11 +23,11 @@ public partial class Fireboy : CharacterBody2D
 	{
 		Vector2 velocity = Velocity;
 		
-		if (!IsOnFloor())
+		if(!IsOnFloor())
 		{
 			velocity.Y += gravity * (float)delta;
 		}
-		else if (velocity.Y > 0)
+		else if(velocity.Y > 0)
 		{
 			velocity.Y = 0;
 		}
@@ -35,7 +35,7 @@ public partial class Fireboy : CharacterBody2D
 		float direction = Input.GetActionStrength("fire_right") - Input.GetActionStrength("fire_left");
 		velocity.X = direction * speed;
 		
-		if (Input.IsActionJustPressed("fire_up") && IsOnFloor())
+		if(Input.IsActionJustPressed("fire_up") && IsOnFloor())
 		{
 			velocity.Y = jumpForce;
 		}
@@ -47,16 +47,16 @@ public partial class Fireboy : CharacterBody2D
 	
 	private void UpdateAnimations(Vector2 velocity)
 	{
-		if (!IsOnFloor())
+		if(!IsOnFloor())
 		{
-			if (velocity.Y > 0)
+			if(velocity.Y > 0)
 			{
 				PlayHeadAnimation("move_down");
 			}
 		}
 		else
 		{
-			if (Mathf.Abs(velocity.X) > 5)
+			if(Mathf.Abs(velocity.X) > 5)
 			{
 				PlayHeadAnimation("move_right");
 				PlayBodyAnimation("move_right");
@@ -72,13 +72,13 @@ public partial class Fireboy : CharacterBody2D
 	
 	private void PlayHeadAnimation(string animName)
 	{
-		if (head.Animation != animName)
+		if(head.Animation != animName)
 			head.Play(animName);
 	}
 	
 	private void PlayBodyAnimation(string animName)
 	{
-		if (body.Animation != animName)
+		if(body.Animation != animName)
 			body.Play(animName);
 	}
 	

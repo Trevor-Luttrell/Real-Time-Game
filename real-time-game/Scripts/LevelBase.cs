@@ -21,7 +21,7 @@ public partial class LevelBase : Node2D
 		
 	public override void _Process(double delta)
 	{
-		if (Input.IsActionJustPressed("restart"))
+		if(Input.IsActionJustPressed("restart"))
 		{
 			RestartLevel();
 		}

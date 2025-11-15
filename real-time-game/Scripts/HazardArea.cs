@@ -37,6 +37,11 @@ public partial class HazardArea : Area2D
 	
 	private void OnBodyEntered(Node2D body)
 	{
-		EmitSignal(SignalName.HazardTriggered);
+		if(Kind == HazardKind.Fire && body is Watergirl)
+			EmitSignal(SignalName.HazardTriggered);
+		else if(Kind == HazardKind.Water && body is Fireboy)
+			EmitSignal(SignalName.HazardTriggered);
+		else if(Kind == HazardKind.Acid)
+			EmitSignal(SignalName.HazardTriggered);
 	}
 }

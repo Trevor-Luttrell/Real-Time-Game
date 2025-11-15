@@ -54,6 +54,6 @@ shape = SubResource("RectangleShape2D_anqd2")
 
 [node name="HazardArea" parent="." instance=ExtResource("6_e3kpl")]
 position = Vector2(541, 329)
-Kind = 2
+scale = Vector2(5.01649, 0.648213)
 
 [connection signal="HazardTriggered" from="HazardArea" to="." method="OnHazardDeathTriggered"]
