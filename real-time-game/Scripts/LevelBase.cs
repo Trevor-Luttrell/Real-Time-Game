@@ -10,6 +10,7 @@ public partial class LevelBase : Node2D
 	
 	private Watergirl watergirl;
 	private Fireboy fireboy;
+	private Node2D hazards;
 	
 	public override void _Ready()
 	{
@@ -17,6 +18,13 @@ public partial class LevelBase : Node2D
 		WatergirlStartPos = watergirl.GlobalPosition;
 		fireboy = GetNode<Fireboy>("Fireboy");
 		FireboyStartPos = fireboy.GlobalPosition;
+		
+		hazards = GetNode<Node2D>("Hazards");
+		
+		foreach (HazardArea hazard in hazards.GetChildren())
+		{
+			hazard.HazardTriggered += OnHazardDeathTriggered;
+		}
 	}
 		
 	public override void _Process(double delta)

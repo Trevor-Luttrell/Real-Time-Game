@@ -56,21 +56,19 @@ region_rect = Rect2(64, 64, 96, 15)
 position = Vector2(48, 6)
 shape = SubResource("RectangleShape2D_anqd2")
 
-[node name="HazardArea" parent="." instance=ExtResource("6_e3kpl")]
+[node name="Audio" parent="." instance=ExtResource("7_2ssho")]
+
+[node name="Hazards" type="Node2D" parent="."]
+
+[node name="HazardArea" parent="Hazards" instance=ExtResource("6_e3kpl")]
 position = Vector2(541, 329)
 scale = Vector2(3.87, 0.5)
 
-[node name="HazardArea2" parent="." instance=ExtResource("6_e3kpl")]
+[node name="HazardArea2" parent="Hazards" instance=ExtResource("6_e3kpl")]
 position = Vector2(84, 401)
 scale = Vector2(6.16, 1)
 Kind = 0
 
-[node name="HazardArea3" parent="." instance=ExtResource("6_e3kpl")]
+[node name="HazardArea3" parent="Hazards" instance=ExtResource("6_e3kpl")]
 position = Vector2(343, 323)
 Kind = 2
-
-[node name="Audio" parent="." instance=ExtResource("7_2ssho")]
-
-[connection signal="HazardTriggered" from="HazardArea" to="." method="OnHazardDeathTriggered"]
-[connection signal="HazardTriggered" from="HazardArea2" to="." method="OnHazardDeathTriggered"]
-[connection signal="HazardTriggered" from="HazardArea3" to="." method="OnHazardDeathTriggered"]
