@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://sh1um1y4bdov"]
+[gd_scene load_steps=10 format=3 uid="uid://sh1um1y4bdov"]
 
 [ext_resource type="Script" uid="uid://dwf152mcg4bnq" path="res://Scripts/LevelBase.cs" id="1_38dla"]
 [ext_resource type="PackedScene" uid="uid://oigeyyiijyku" path="res://Scenes/watergirl.tscn" id="1_fhsqj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bmkvivd8olmpv" path="res://Assets/Decorations (32x32).png" id="4_3ne40"]
 [ext_resource type="Script" uid="uid://duv8uvtm0c2f1" path="res://Scripts/MovingPlatform.cs" id="4_e3kpl"]
 [ext_resource type="PackedScene" uid="uid://b0oh43kfqdkhm" path="res://Scenes/hazard.tscn" id="6_e3kpl"]
+[ext_resource type="PackedScene" uid="uid://7lkl2jnco8kv" path="res://Scenes/Audio.tscn" id="7_2ssho"]
 
 [sub_resource type="Curve2D" id="Curve2D_2ssho"]
 _data = {
@@ -59,4 +60,17 @@ shape = SubResource("RectangleShape2D_anqd2")
 position = Vector2(541, 329)
 scale = Vector2(3.87, 0.5)
 
+[node name="HazardArea2" parent="." instance=ExtResource("6_e3kpl")]
+position = Vector2(84, 401)
+scale = Vector2(6.16, 1)
+Kind = 0
+
+[node name="HazardArea3" parent="." instance=ExtResource("6_e3kpl")]
+position = Vector2(343, 323)
+Kind = 2
+
+[node name="Audio" parent="." instance=ExtResource("7_2ssho")]
+
 [connection signal="HazardTriggered" from="HazardArea" to="." method="OnHazardDeathTriggered"]
+[connection signal="HazardTriggered" from="HazardArea2" to="." method="OnHazardDeathTriggered"]
+[connection signal="HazardTriggered" from="HazardArea3" to="." method="OnHazardDeathTriggered"]

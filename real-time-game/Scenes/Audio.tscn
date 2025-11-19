@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://7lkl2jnco8kv"]
+
+[ext_resource type="AudioStream" uid="uid://c5umw1gohcolb" path="res://Tunes/Ludwig Van Beethoven - Moonlight Sonata (3rd Movement) - Cole Rolland (Guitar Cover).mp3" id="1_ahv63"]
+[ext_resource type="Script" uid="uid://in1ospdoxnlc" path="res://Scripts/Audio.cs" id="2_bcixw"]
+
+[node name="Audio" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_ahv63")
+script = ExtResource("2_bcixw")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5umw1gohcolb"
+path="res://.godot/imported/Ludwig Van Beethoven - Moonlight Sonata (3rd Movement) - Cole Rolland (Guitar Cover).mp3-427776e4d90cce058e55e9b6dc895299.mp3str"
+
+[deps]
+
+source_file="res://Tunes/Ludwig Van Beethoven - Moonlight Sonata (3rd Movement) - Cole Rolland (Guitar Cover).mp3"
+dest_files=["res://.godot/imported/Ludwig Van Beethoven - Moonlight Sonata (3rd Movement) - Cole Rolland (Guitar Cover).mp3-427776e4d90cce058e55e9b6dc895299.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
