@@ -12,7 +12,10 @@ public partial class LevelBase : Node2D
 	private Fireboy fireboy;
 	private Node2D hazards;
 	private Node2D gems;
+	private Node2D doors;
 	private GemCounter gemCounter;
+	
+	private int doorsEntered = 0;
 	
 	public override void _Ready()
 	{
@@ -24,6 +27,7 @@ public partial class LevelBase : Node2D
 		hazards = GetNode<Node2D>("Hazards");
 		gems = GetNode<Node2D>("Gems");
 		gemCounter = GetNode<GemCounter>("GemCounter");
+		doors = GetNode<Node2D>("Doors");
 		
 		foreach(HazardArea hazard in hazards.GetChildren())
 		{
@@ -33,6 +37,11 @@ public partial class LevelBase : Node2D
 		foreach(Gem gem in gems.GetChildren())
 		{
 			gem.GemTriggered += OnGemTriggered;
+		}
+		
+		foreach(Door door in doors.GetChildren())
+		{
+			door.DoorEntered += OnDoorEnteredTriggered;
 		}
 	}
 		
@@ -53,6 +62,24 @@ public partial class LevelBase : Node2D
 	{
 		gem.QueueFree();
 		gemCounter.AddGem(gem.Kind);
+	}
+	
+	public void OnDoorEnteredTriggered(Door door)
+	{
+		doorsEntered++;
+		if(door.Kind == DoorKind.Water)
+		{
+			watergirl.QueueFree();
+		}
+		else if(door.Kind == DoorKind.Fire)
+		{
+			fireboy.QueueFree();
+		}
+		
+		if(doorsEntered == 2)
+		{
+			GD.Print("Load the next level, or you win!");
+		}
 	}
 	
 	private void RestartLevel()
