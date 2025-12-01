@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b740m4oq07uxc"]
+
+[ext_resource type="Script" uid="uid://gmbsls4yoqua" path="res://Scripts/Gem.cs" id="1_0xstn"]
+[ext_resource type="Texture2D" uid="uid://el7827j4mgw1" path="res://Assets/Browser Games - Fireboy and Watergirl_ The Forest Temple - Playable Characters - Fireboy & Watergirl (HTML 5).png" id="2_i7jy3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78y5l"]
+size = Vector2(24.4474, 19.4569)
+
+[node name="Gem" type="Area2D"]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_0xstn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_i7jy3")
+region_enabled = true
+region_rect = Rect2(872, 1367, 66, 61)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.19209e-07, 0)
+scale = Vector2(1.71798, 1.85025)
+shape = SubResource("RectangleShape2D_78y5l")

@@ -11,6 +11,7 @@ public partial class LevelBase : Node2D
 	private Watergirl watergirl;
 	private Fireboy fireboy;
 	private Node2D hazards;
+	private Node2D gems;
 	
 	public override void _Ready()
 	{
@@ -20,10 +21,16 @@ public partial class LevelBase : Node2D
 		FireboyStartPos = fireboy.GlobalPosition;
 		
 		hazards = GetNode<Node2D>("Hazards");
+		gems = GetNode<Node2D>("Gems");
 		
-		foreach (HazardArea hazard in hazards.GetChildren())
+		foreach(HazardArea hazard in hazards.GetChildren())
 		{
 			hazard.HazardTriggered += OnHazardDeathTriggered;
+		}
+		
+		foreach(Gem gem in gems.GetChildren())
+		{
+			gem.GemTriggered += OnGemTriggered;
 		}
 	}
 		
@@ -38,6 +45,12 @@ public partial class LevelBase : Node2D
 	public void OnHazardDeathTriggered()
 	{
 		CallDeferred(nameof(RestartLevel));
+	}
+	
+	public void OnGemTriggered(Gem gem)
+	{
+		gem.QueueFree();
+		GD.Print("Give Gem on Counter");
 	}
 	
 	private void RestartLevel()
