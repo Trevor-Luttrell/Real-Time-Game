@@ -12,6 +12,7 @@ public partial class LevelBase : Node2D
 	private Fireboy fireboy;
 	private Node2D hazards;
 	private Node2D gems;
+	private GemCounter gemCounter;
 	
 	public override void _Ready()
 	{
@@ -22,6 +23,7 @@ public partial class LevelBase : Node2D
 		
 		hazards = GetNode<Node2D>("Hazards");
 		gems = GetNode<Node2D>("Gems");
+		gemCounter = GetNode<GemCounter>("GemCounter");
 		
 		foreach(HazardArea hazard in hazards.GetChildren())
 		{
@@ -50,7 +52,7 @@ public partial class LevelBase : Node2D
 	public void OnGemTriggered(Gem gem)
 	{
 		gem.QueueFree();
-		GD.Print("Give Gem on Counter");
+		gemCounter.AddGem(gem.Kind);
 	}
 	
 	private void RestartLevel()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://sh1um1y4bdov"]
+[gd_scene load_steps=12 format=3 uid="uid://sh1um1y4bdov"]
 
 [ext_resource type="Script" uid="uid://dwf152mcg4bnq" path="res://Scripts/LevelBase.cs" id="1_38dla"]
 [ext_resource type="PackedScene" uid="uid://oigeyyiijyku" path="res://Scenes/watergirl.tscn" id="1_fhsqj"]
@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bmkvivd8olmpv" path="res://Assets/Decorations (32x32).png" id="4_3ne40"]
 [ext_resource type="Script" uid="uid://duv8uvtm0c2f1" path="res://Scripts/MovingPlatform.cs" id="4_e3kpl"]
 [ext_resource type="PackedScene" uid="uid://b0oh43kfqdkhm" path="res://Scenes/hazard.tscn" id="6_e3kpl"]
-[ext_resource type="PackedScene" uid="uid://7lkl2jnco8kv" path="res://Scenes/Audio.tscn" id="7_2ssho"]
+[ext_resource type="PackedScene" uid="uid://7lkl2jnco8kv" path="res://Scenes/audio.tscn" id="7_2ssho"]
 [ext_resource type="PackedScene" uid="uid://b740m4oq07uxc" path="res://Scenes/gem.tscn" id="8_a8nbr"]
+[ext_resource type="PackedScene" uid="uid://b7c6qn5q32rtd" path="res://Scenes/gem_counter.tscn" id="9_lnrhr"]
 
 [sub_resource type="Curve2D" id="Curve2D_2ssho"]
 _data = {
@@ -86,3 +87,5 @@ Kind = 0
 [node name="Gem3" parent="Gems" instance=ExtResource("8_a8nbr")]
 position = Vector2(482, 208)
 Kind = 1
+
+[node name="GemCounter" parent="." instance=ExtResource("9_lnrhr")]

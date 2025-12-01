@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7c6qn5q32rtd"]
+
+[ext_resource type="Script" uid="uid://dt1qnu1k3qpm1" path="res://Scripts/GemCounter.cs" id="1_eoj3u"]
+
+[node name="GemCounter" type="CanvasLayer"]
+script = ExtResource("1_eoj3u")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 47.0
+offset_right = 96.0
+offset_bottom = 23.0
+text = "Gems:"
+
+[node name="FireGems" type="Label" parent="."]
+offset_top = 20.0
+offset_right = 47.0
+offset_bottom = 43.0
+text = "Fire: 0"
+
+[node name="WaterGems" type="Label" parent="."]
+offset_left = 131.0
+offset_top = 20.0
+offset_right = 196.0
+offset_bottom = 43.0
+text = "Water: 0"
+
+[node name="NeutralGems" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 20.0
+offset_right = 127.0
+offset_bottom = 43.0
+text = "Neutral: 0"
