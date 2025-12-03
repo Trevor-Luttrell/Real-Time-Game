@@ -68,7 +68,7 @@ position = Vector2(541, 329)
 scale = Vector2(3.87, 0.5)
 
 [node name="HazardArea2" parent="Hazards" instance=ExtResource("6_e3kpl")]
-position = Vector2(84, 401)
+position = Vector2(205, 415)
 scale = Vector2(6.16, 1)
 Kind = 0
 

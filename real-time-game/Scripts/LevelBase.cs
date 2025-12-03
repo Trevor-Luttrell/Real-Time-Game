@@ -24,14 +24,16 @@ public partial class LevelBase : Node2D
 		fireboy = GetNode<Fireboy>("Fireboy");
 		FireboyStartPos = fireboy.GlobalPosition;
 		
-		hazards = GetNode<Node2D>("Hazards");
+		hazards = GetNodeOrNull<Node2D>("Hazards");
 		gems = GetNode<Node2D>("Gems");
 		gemCounter = GetNode<GemCounter>("GemCounter");
 		doors = GetNode<Node2D>("Doors");
 		
-		foreach(HazardArea hazard in hazards.GetChildren())
-		{
-			hazard.HazardTriggered += OnHazardDeathTriggered;
+		if(hazards != null){
+			foreach(HazardArea hazard in hazards.GetChildren())
+			{
+				hazard.HazardTriggered += OnHazardDeathTriggered;
+			}
 		}
 		
 		foreach(Gem gem in gems.GetChildren())
@@ -78,8 +80,12 @@ public partial class LevelBase : Node2D
 		
 		if(doorsEntered == 2)
 		{
-			GD.Print("Load the next level, or you win!");
+			NextLevel();
 		}
+	}
+	
+	public virtual void NextLevel(){
+		GD.Print("Start Next Level!");
 	}
 	
 	private void RestartLevel()
