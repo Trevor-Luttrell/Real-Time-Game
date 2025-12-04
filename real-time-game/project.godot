@@ -15,6 +15,10 @@ run/main_scene="uid://sh1um1y4bdov"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Audio="*res://Scenes/audio.tscn"
+
 [display]
 
 window/stretch/mode="canvas_items"
@@ -69,3 +73,4 @@ restart={
 2d_physics/layer_4="Hazard"
 2d_physics/layer_5="Gem"
 2d_physics/layer_6="Door"
+2d_physics/layer_7="Wall"

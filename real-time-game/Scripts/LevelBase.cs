@@ -25,8 +25,8 @@ public partial class LevelBase : Node2D
 		FireboyStartPos = fireboy.GlobalPosition;
 		
 		hazards = GetNodeOrNull<Node2D>("Hazards");
-		gems = GetNode<Node2D>("Gems");
-		gemCounter = GetNode<GemCounter>("GemCounter");
+		gems = GetNodeOrNull<Node2D>("Gems");
+		gemCounter = GetNodeOrNull<GemCounter>("GemCounter");
 		doors = GetNode<Node2D>("Doors");
 		
 		if(hazards != null){
@@ -36,9 +36,11 @@ public partial class LevelBase : Node2D
 			}
 		}
 		
-		foreach(Gem gem in gems.GetChildren())
-		{
-			gem.GemTriggered += OnGemTriggered;
+		if(gems != null){
+			foreach(Gem gem in gems.GetChildren())
+			{
+				gem.GemTriggered += OnGemTriggered;
+			}
 		}
 		
 		foreach(Door door in doors.GetChildren())
