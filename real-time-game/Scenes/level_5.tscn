@@ -102,7 +102,7 @@ Kind = 1
 position = Vector2(1021, 355)
 
 [node name="Gem4" parent="Gems" instance=ExtResource("10_r8l1h")]
-position = Vector2(55, 282)
+position = Vector2(84, 315)
 
 [node name="Label" type="Label" parent="."]
 offset_left = 114.0

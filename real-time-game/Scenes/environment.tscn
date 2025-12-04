@@ -723,4 +723,5 @@ terrain_set_0/terrain_1/color = Color(0.278412, 0.405426, 0.816552, 1)
 sources/1 = SubResource("TileSetAtlasSource_mfu5p")
 
 [node name="Environment" type="TileMapLayer"]
+z_index = -2
 tile_set = SubResource("TileSet_a65fu")

@@ -4,11 +4,11 @@ using System;
 public partial class Watergirl : CharacterBody2D
 {
 	[Export]
-	public float speed = 200f;
+	public float speed = 260f;
 	[Export]
 	public float jumpForce = -400f;
 	[Export]
-	public float gravity = 900f;
+	public float gravity = 800f;
 	
 	private AnimatedSprite2D head;
 	private AnimatedSprite2D body;
