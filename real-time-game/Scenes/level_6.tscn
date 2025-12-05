@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bdjj41qjebrfy"]
+[gd_scene load_steps=15 format=4 uid="uid://bdjj41qjebrfy"]
 
 [ext_resource type="PackedScene" uid="uid://cik03srh5rlh" path="res://Scenes/environment.tscn" id="1_fj5rg"]
 [ext_resource type="PackedScene" uid="uid://b47m8kofkusoo" path="res://Scenes/fireboy.tscn" id="2_67u3v"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bmkvivd8olmpv" path="res://Assets/Decorations (32x32).png" id="7_b33os"]
 [ext_resource type="PackedScene" uid="uid://c2e2jfgv61gj6" path="res://Scenes/disappearing_platform.tscn" id="8_b33os"]
 [ext_resource type="PackedScene" uid="uid://b740m4oq07uxc" path="res://Scenes/gem.tscn" id="9_546p8"]
+[ext_resource type="PackedScene" uid="uid://cgp8ugmnyhjc1" path="res://Scenes/pause.tscn" id="10_vu5tt"]
 
 [sub_resource type="Curve2D" id="Curve2D_546p8"]
 _data = {
@@ -171,3 +172,5 @@ position = Vector2(1021, 355)
 
 [node name="Gem4" parent="Gems2" instance=ExtResource("9_546p8")]
 position = Vector2(84, 315)
+
+[node name="Pause" parent="." instance=ExtResource("10_vu5tt")]
