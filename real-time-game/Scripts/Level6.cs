@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Level5 : LevelBase
+public partial class Level6 : LevelBase
 {
 	public override void NextLevel()
 	{
@@ -10,7 +10,7 @@ public partial class Level5 : LevelBase
 
 	private void LoadNextLevel()
 	{
-		var nextScene = ResourceLoader.Load<PackedScene>("res://scenes/level_6.tscn");
+		var nextScene = ResourceLoader.Load<PackedScene>("res://scenes/level_7.tscn");
 		GetTree().ChangeSceneToPacked(nextScene);
 	}
 }

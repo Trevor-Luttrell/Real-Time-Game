@@ -13,9 +13,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_wyrn7"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 465, 96.5, 0, 0, 0, 0, 464.5, 270.5, 0, 0, 0, 0, 465, 96.5, 0, 0, 0, 0, 449.5, -53)
+"points": PackedVector2Array(0, 0, 0, 0, 463, 97, 0, 0, 0, 0, 461.5, 295.5, 0, 0, 0, 0, 463.5, 97)
 }
-point_count = 4
+point_count = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnoyx"]
 size = Vector2(95, 11)
@@ -34,16 +34,16 @@ position = Vector2(82, 392)
 
 [node name="Hazards" type="Node2D" parent="."]
 
-[node name="HazardArea" parent="Hazards" instance=ExtResource("5_xfwg7")]
+[node name="Fire hazard" parent="Hazards" instance=ExtResource("5_xfwg7")]
 position = Vector2(544, 357)
 scale = Vector2(2.96939, 0.50024)
 Kind = 0
 
-[node name="HazardArea2" parent="Hazards" instance=ExtResource("5_xfwg7")]
+[node name="Water hazard" parent="Hazards" instance=ExtResource("5_xfwg7")]
 position = Vector2(545, 549)
 scale = Vector2(4.01095, 0.659236)
 
-[node name="HazardArea3" parent="Hazards" instance=ExtResource("5_xfwg7")]
+[node name="Acid hazard" parent="Hazards" instance=ExtResource("5_xfwg7")]
 position = Vector2(976, 590)
 scale = Vector2(4.60735, 0.874363)
 Kind = 2
@@ -51,10 +51,10 @@ Kind = 2
 [node name="Doors" type="Node2D" parent="."]
 position = Vector2(88, 158)
 
-[node name="Door" parent="Doors" instance=ExtResource("6_r8l1h")]
+[node name="Fire door" parent="Doors" instance=ExtResource("6_r8l1h")]
 Kind = 0
 
-[node name="Door2" parent="Doors" instance=ExtResource("6_r8l1h")]
+[node name="Water door" parent="Doors" instance=ExtResource("6_r8l1h")]
 position = Vector2(63, 0)
 
 [node name="MovingPlatform" type="Path2D" parent="."]
@@ -64,8 +64,8 @@ script = ExtResource("7_68k2k")
 speed = 50.0
 
 [node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatform"]
-position = Vector2(464.582, 241.797)
-rotation = -1.56792
+position = Vector2(461.542, 291.365)
+rotation = -1.56072
 progress = 202.719
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="MovingPlatform"]
