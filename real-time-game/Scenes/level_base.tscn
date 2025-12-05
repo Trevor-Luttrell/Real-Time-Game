@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=4 uid="uid://sh1um1y4bdov"]
+[gd_scene load_steps=71 format=4 uid="uid://sh1um1y4bdov"]
 
 [ext_resource type="Script" uid="uid://dwf152mcg4bnq" path="res://Scripts/LevelBase.cs" id="1_38dla"]
 [ext_resource type="PackedScene" uid="uid://oigeyyiijyku" path="res://Scenes/watergirl.tscn" id="1_fhsqj"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cydqm38b4trea" path="res://Assets/Closing (46x56).png" id="14_1mcx1"]
 [ext_resource type="Texture2D" uid="uid://by1h1ch33uira" path="res://Assets/Idle.png" id="15_vklvw"]
 [ext_resource type="Texture2D" uid="uid://dqy4l40ofew36" path="res://Assets/Opening (46x56).png" id="16_83hxs"]
+[ext_resource type="PackedScene" uid="uid://c2e2jfgv61gj6" path="res://Scenes/disappearing_platform.tscn" id="17_uumhc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5jrfj"]
 atlas = ExtResource("4_306k7")
@@ -455,10 +456,6 @@ position = Vector2(0.4, 0.800003)
 rotation = 3.13322
 progress = 202.719
 
-[node name="@Timer@21827" type="Timer" parent="MovingPlatform/PathFollow2D"]
-wait_time = 0.2
-one_shot = true
-
 [node name="CharacterBody2D" type="CharacterBody2D" parent="MovingPlatform"]
 collision_layer = 4
 collision_mask = 3
@@ -617,3 +614,6 @@ sprite_frames = SubResource("SpriteFrames_ab4ky")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Doors/FireDoor"]
 scale = Vector2(0.57143, 2.71879)
 shape = SubResource("RectangleShape2D_a43ba")
+
+[node name="DisappearingPlatform" parent="." instance=ExtResource("17_uumhc")]
+position = Vector2(242, 151)

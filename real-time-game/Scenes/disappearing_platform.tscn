@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2e2jfgv61gj6"]
+
+[ext_resource type="Texture2D" uid="uid://bf0amvwsv3rsa" path="res://Assets/platform.png" id="1_cr0ua"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_cr0ua"]
+script/source = "using Godot;
+using System;
+
+public partial class DisappearingPlatform : StaticBody2D
+{
+	private Timer _timer;
+	private CollisionShape2D _collisionShape;
+
+	public override void _Ready()
+	{
+		_timer = GetNode<Timer>(\"Area2D/Timer\");
+		_collisionShape = GetNode<CollisionShape2D>(\"CollisionShape2D\");
+	}
+
+	private void _on_area_2d_body_entered(Node2D body)
+	{
+		if (body is CharacterBody2D)
+		{
+			_timer.Start();
+		}
+	}
+
+	private void _on_timer_timeout()
+	{
+		var tween = CreateTween();
+		tween.TweenProperty(this, \"modulate:a\", 0f, 0.4f);
+		_collisionShape.Position = new Vector2(-10000, 20000);
+	}
+}
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cr0ua"]
+size = Vector2(84, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trbhs"]
+size = Vector2(82, 23)
+
+[node name="DisappearingPlatform" type="StaticBody2D"]
+collision_layer = 128
+collision_mask = 3
+script = SubResource("CSharpScript_cr0ua")
+
+[node name="Platform" type="Sprite2D" parent="."]
+position = Vector2(47, 14)
+texture = ExtResource("1_cr0ua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(46, 14.5)
+shape = SubResource("RectangleShape2D_cr0ua")
+one_way_collision = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(45, 5)
+shape = SubResource("RectangleShape2D_trbhs")
+
+[node name="Timer" type="Timer" parent="Area2D/CollisionShape2D"]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Area2D/CollisionShape2D/Timer" to="." method="_on_timer_timeout"]

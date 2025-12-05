@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bf0amvwsv3rsa"
-path="res://.godot/imported/20251029darkDwellersButtonB1-Sheet.png-3e4a07f741fb444297f34916e6ea1f4c.ctex"
+path="res://.godot/imported/platform.png-d17c43ac0e23eda299ac09adb2753553.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/20251029darkDwellersButtonB1-Sheet.png"
-dest_files=["res://.godot/imported/20251029darkDwellersButtonB1-Sheet.png-3e4a07f741fb444297f34916e6ea1f4c.ctex"]
+source_file="res://Assets/platform.png"
+dest_files=["res://.godot/imported/platform.png-d17c43ac0e23eda299ac09adb2753553.ctex"]
 
 [params]
 
