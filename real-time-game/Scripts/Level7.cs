@@ -10,7 +10,7 @@ public partial class Level7 : LevelBase
 
 	private void LoadNextLevel()
 	{
-		var nextScene = ResourceLoader.Load<PackedScene>("res://scenes/level_win.tscn");
+		var nextScene = ResourceLoader.Load<PackedScene>("res://scenes/level_8.tscn");
 		GetTree().ChangeSceneToPacked(nextScene);
 	}
 }
