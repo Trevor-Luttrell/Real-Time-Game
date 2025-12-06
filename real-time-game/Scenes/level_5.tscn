@@ -103,10 +103,3 @@ position = Vector2(1021, 355)
 
 [node name="Gem4" parent="Gems" instance=ExtResource("10_r8l1h")]
 position = Vector2(84, 315)
-
-[node name="Label" type="Label" parent="."]
-offset_left = 114.0
-offset_top = 267.0
-offset_right = 414.0
-offset_bottom = 290.0
-text = "Final level... let's see what you learned!"

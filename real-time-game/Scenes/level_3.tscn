@@ -38,17 +38,17 @@ scale = Vector2(1.98933, 0.387523)
 Kind = 0
 
 [node name="HazardArea2" parent="Hazards" instance=ExtResource("5_5rvg2")]
-position = Vector2(759, 607)
-scale = Vector2(-2.77528, 0.377913)
+position = Vector2(702, 609)
+scale = Vector2(-4.34151, 0.36986)
 
 [node name="Gems" type="Node2D" parent="."]
 
 [node name="Gem" parent="Gems" instance=ExtResource("7_5e78q")]
-position = Vector2(754, 523)
+position = Vector2(703, 522)
 Kind = 0
 
 [node name="Gem2" parent="Gems" instance=ExtResource("7_5e78q")]
-position = Vector2(757, 589)
+position = Vector2(705, 594)
 Kind = 1
 
 [node name="Gem3" parent="Gems" instance=ExtResource("7_5e78q")]

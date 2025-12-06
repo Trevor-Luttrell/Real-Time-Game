@@ -166,3 +166,10 @@ Kind = 1
 [node name="GemCounter" parent="." instance=ExtResource("12_cepf5")]
 offset = Vector2(700, 50)
 transform = Transform2D(1, 0, 0, 1, 700, 50)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 524.0
+offset_top = 83.0
+offset_right = 628.0
+offset_bottom = 106.0
+text = "Gotta go fast!"

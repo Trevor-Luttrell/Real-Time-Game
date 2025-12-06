@@ -109,3 +109,11 @@ position = Vector2(348, 242)
 [node name="GemCounter" parent="." instance=ExtResource("9_38lld")]
 offset = Vector2(700, 50)
 transform = Transform2D(1, 0, 0, 1, 700, 50)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 47.0
+offset_top = 426.0
+offset_right = 435.0
+offset_bottom = 449.0
+text = "Who turned out the lights? 
+Ha oh yeah... it was me"

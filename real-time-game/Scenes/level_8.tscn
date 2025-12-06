@@ -124,3 +124,10 @@ shape = SubResource("RectangleShape2D_3xlci")
 [node name="GemCounter" parent="." instance=ExtResource("11_q1vug")]
 offset = Vector2(700, 50)
 transform = Transform2D(1, 0, 0, 1, 700, 50)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 175.0
+offset_top = 438.0
+offset_right = 471.0
+offset_bottom = 461.0
+text = "Final level... let's see what you learned"
