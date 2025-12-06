@@ -21,6 +21,7 @@ position = Vector2(136, 545)
 [node name="PointLight2D" type="PointLight2D" parent="Fireboy"]
 position = Vector2(4.00006, -4)
 scale = Vector2(0.446764, 0.470036)
+blend_mode = 2
 shadow_enabled = true
 texture = ExtResource("5_ppxtb")
 
@@ -35,31 +36,31 @@ shadow_enabled = true
 texture = ExtResource("5_ppxtb")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.597176, 0.597176, 0.597176, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="Hazards" type="Node2D" parent="."]
 
 [node name="Fire hazard" parent="Hazards" instance=ExtResource("2_i3ob1")]
-position = Vector2(337, 609)
-scale = Vector2(3.64939, 0.50024)
+position = Vector2(336, 615)
+scale = Vector2(3.64939, 0.294048)
 Kind = 0
 
 [node name="Fire hazard2" parent="Hazards" instance=ExtResource("2_i3ob1")]
-position = Vector2(750, 510)
-scale = Vector2(3.64939, 0.50024)
+position = Vector2(750, 518)
+scale = Vector2(3.64939, 0.300242)
 Kind = 0
 
 [node name="Water hazard" parent="Hazards" instance=ExtResource("2_i3ob1")]
-position = Vector2(335, 511)
-scale = Vector2(3.65095, 0.499236)
+position = Vector2(336, 518)
+scale = Vector2(3.65095, 0.299236)
 
 [node name="Water hazard2" parent="Hazards" instance=ExtResource("2_i3ob1")]
-position = Vector2(757, 610)
-scale = Vector2(3.65095, 0.499236)
+position = Vector2(757, 613)
+scale = Vector2(3.65095, 0.299241)
 
 [node name="Acid hazard" parent="Hazards" instance=ExtResource("2_i3ob1")]
 position = Vector2(590, 383)
-scale = Vector2(10.4874, 0.474364)
+scale = Vector2(10.4874, 0.314364)
 Kind = 2
 
 [node name="Doors" type="Node2D" parent="."]
@@ -74,16 +75,32 @@ position = Vector2(958, -58)
 
 [node name="Gems" type="Node2D" parent="."]
 
-[node name="Gem" parent="Gems" instance=ExtResource("8_vpjpy")]
-position = Vector2(539, 314)
+[node name="Red gem" parent="Gems" instance=ExtResource("8_vpjpy")]
+position = Vector2(753, 450)
 Kind = 0
 
-[node name="Gem2" parent="Gems" instance=ExtResource("8_vpjpy")]
-position = Vector2(541, 473)
+[node name="Red gem3" parent="Gems" instance=ExtResource("8_vpjpy")]
+position = Vector2(724, 93)
+Kind = 0
+
+[node name="Red gem2" parent="Gems" instance=ExtResource("8_vpjpy")]
+position = Vector2(326, 571)
+Kind = 0
+
+[node name="Blue gem" parent="Gems" instance=ExtResource("8_vpjpy")]
+position = Vector2(325, 457)
 Kind = 1
 
-[node name="Gem3" parent="Gems" instance=ExtResource("8_vpjpy")]
-position = Vector2(1021, 355)
+[node name="Blue gem3" parent="Gems" instance=ExtResource("8_vpjpy")]
+position = Vector2(407, 95)
+Kind = 1
 
-[node name="Gem4" parent="Gems" instance=ExtResource("8_vpjpy")]
-position = Vector2(84, 315)
+[node name="Blue gem2" parent="Gems" instance=ExtResource("8_vpjpy")]
+position = Vector2(757, 567)
+Kind = 1
+
+[node name="Grey gem" parent="Gems" instance=ExtResource("8_vpjpy")]
+position = Vector2(792, 243)
+
+[node name="Grey gem2" parent="Gems" instance=ExtResource("8_vpjpy")]
+position = Vector2(348, 242)
