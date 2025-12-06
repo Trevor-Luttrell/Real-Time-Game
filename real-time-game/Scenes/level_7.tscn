@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://btq1rqs5g85pm"]
+[gd_scene load_steps=10 format=4 uid="uid://btq1rqs5g85pm"]
 
 [ext_resource type="Script" uid="uid://dfsq0e2ckcukn" path="res://Scripts/Level7.cs" id="1_7e1oo"]
 [ext_resource type="PackedScene" uid="uid://cik03srh5rlh" path="res://Scenes/environment.tscn" id="1_i87cx"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://oigeyyiijyku" path="res://Scenes/watergirl.tscn" id="5_7e1oo"]
 [ext_resource type="Texture2D" uid="uid://c5ay64poagtot" path="res://Assets/whiteGlowLight.png" id="5_ppxtb"]
 [ext_resource type="PackedScene" uid="uid://b740m4oq07uxc" path="res://Scenes/gem.tscn" id="8_vpjpy"]
+[ext_resource type="PackedScene" uid="uid://b7c6qn5q32rtd" path="res://Scenes/gem_counter.tscn" id="9_38lld"]
 
 [node name="Level7" type="Node2D"]
 script = ExtResource("1_7e1oo")
@@ -104,3 +105,7 @@ position = Vector2(792, 243)
 
 [node name="Grey gem2" parent="Gems" instance=ExtResource("8_vpjpy")]
 position = Vector2(348, 242)
+
+[node name="GemCounter" parent="." instance=ExtResource("9_38lld")]
+offset = Vector2(700, 50)
+transform = Transform2D(1, 0, 0, 1, 700, 50)

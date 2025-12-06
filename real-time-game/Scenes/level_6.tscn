@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bdjj41qjebrfy"]
+[gd_scene load_steps=17 format=4 uid="uid://bdjj41qjebrfy"]
 
 [ext_resource type="Script" uid="uid://c2v0da73n5xkg" path="res://Scripts/Level6.cs" id="1_cnikc"]
 [ext_resource type="PackedScene" uid="uid://cik03srh5rlh" path="res://Scenes/environment.tscn" id="1_fj5rg"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c2e2jfgv61gj6" path="res://Scenes/disappearing_platform.tscn" id="8_b33os"]
 [ext_resource type="PackedScene" uid="uid://b740m4oq07uxc" path="res://Scenes/gem.tscn" id="9_546p8"]
 [ext_resource type="PackedScene" uid="uid://cgp8ugmnyhjc1" path="res://Scenes/pause.tscn" id="10_vu5tt"]
+[ext_resource type="PackedScene" uid="uid://b7c6qn5q32rtd" path="res://Scenes/gem_counter.tscn" id="12_cepf5"]
 
 [sub_resource type="Curve2D" id="Curve2D_546p8"]
 _data = {
@@ -165,3 +166,7 @@ Kind = 1
 [node name="Blue gem2" parent="Gems" instance=ExtResource("9_546p8")]
 position = Vector2(1028, 542)
 Kind = 1
+
+[node name="GemCounter" parent="." instance=ExtResource("12_cepf5")]
+offset = Vector2(700, 50)
+transform = Transform2D(1, 0, 0, 1, 700, 50)
